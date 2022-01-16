@@ -1,0 +1,2 @@
+mixin componentName (props)
+    .componentName

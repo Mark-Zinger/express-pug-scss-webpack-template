@@ -1,0 +1,21 @@
+@mixin h1 {
+    @include font(100, 84, 74, 74, 48);
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+@mixin h2 {
+    @include font(78, 64, 56, 56, 36);
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+
+// Заголовки
+.h-1 {
+    @include h1;
+}
+
+.h-2 {
+    @include h2;
+}

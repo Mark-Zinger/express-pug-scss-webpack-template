@@ -1,0 +1,5 @@
+class componentName {
+
+}
+
+export default componentName;

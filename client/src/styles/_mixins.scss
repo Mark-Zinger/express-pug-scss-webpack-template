@@ -1,0 +1,64 @@
+$breakponts: (
+    //xs: 320px,
+    sm: 375px,
+    md: 768px,
+    xl: 1280px,
+    xxl: 1440px,
+    fhd: 1920px,
+);
+
+@mixin media-breakpoint-up($name, $px: 0) {
+    @each $breakpoint-name, $resolution in $breakponts {
+        @if $name == $breakpoint-name {
+            @media (min-width: ($resolution + $px)) {
+                @content;
+            }
+        }   
+    }
+}
+
+@mixin media-breakpoint-down($name, $px: 0) {
+    @each $breakpoint-name, $resolution in $breakponts {
+        @if $name == $breakpoint-name {
+            @media (max-width: ($resolution + $px)) {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin font($desktop-1920, $desktop-1440, $desktop-1280, $tablet-768, $mobile) {
+    font-size: #{$mobile}px;
+
+    @include media-breakpoint-up(md) {
+        font-size: calc(#{smooth-value($tablet-768, $desktop-1280, map-get($breakpoints, md), map-get($breakpoints, xl), 'w')});
+    }
+
+    @include media-breakpoint-up(xl) {
+        font-size: calc(#{smooth-value($desktop-1280, $desktop-1440, map-get($breakpoints, xl), map-get($breakpoints, xxl), 'w')});
+    }
+
+    @include media-breakpoint-up(xxl) {
+        font-size: calc(#{smooth-value($desktop-1440, $desktop-1920, map-get($breakpoints, xxl), map-get($breakpoints, fhd), 'w')});
+    }
+
+    //@include media-breakpoint-up(2k) {
+    //    font-size: calc(#{$desktop-fhd / 1920 * 100 / 2}vw + #{$desktop-fhd / 1080 * 100 / 2}vh);
+    //}
+}
+
+
+@mixin ie11() {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        @content;
+    }
+}
+
+@mixin safari {
+    // Safari 11+
+    @media not all and (min-resolution:.001dpcm) {
+        @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+            @content;
+        }
+    }
+}

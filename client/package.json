@@ -1,0 +1,49 @@
+{
+  "name": "express-pug-scss-webpack-template",
+  "version": "1.0.0",
+  "description": "Basic configuration of Express Pug SCSS Webpack",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development webpack serve --open",
+    "dev": "cross-env NODE_ENV=development webpack",
+    "build": "cross-env NODE_ENV=production webpack",
+    "component:create": "node scripts/component/create.js",
+    "component:remove": "node scripts/component/remove.js",
+    "component:refresh": "node scripts/component/refresh.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mark-Zinger/express-pug-scss-webpack-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mark-Zinger/express-pug-scss-webpack-template/issues"
+  },
+  "homepage": "https://github.com/Mark-Zinger/express-pug-scss-webpack-template#readme",
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "babel-loader": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.4.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.4.2",
+    "postcss": "^8.3.9",
+    "postcss-loader": "^6.1.1",
+    "postcss-preset-env": "^7.2.3",
+    "pug": "^3.0.2",
+    "pug-html-loader": "^1.1.5",
+    "sass": "^1.42.1",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.3.0",
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0",
+    "webpack-dev-server": "^4.7.3"
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
+}

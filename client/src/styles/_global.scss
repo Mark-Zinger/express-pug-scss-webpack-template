@@ -1,0 +1,22 @@
+
+html {
+  font-family: generalFont;
+}
+
+body {
+  background-color: red;
+}
+
+h1  {
+  color: $primaryColor;
+}
+.container{
+  &__subtitle {
+    color: $secondaryColor;
+    display: block;
+    height: 140px;
+    background: url("../images/webpack.png");
+    display: flex;
+    justify-content: center;
+  }
+}
